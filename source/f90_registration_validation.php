@@ -32,18 +32,6 @@ class plgSystemF90_registration_validation extends JPlugin
 		
 		JHtml::script('plugins/'.$this->_type.'/'.$this->_name.'/tmpl/validation.js');
 
-		$version = new JVersion();
-		$major  = str_replace('.', '', $version->RELEASE);
-		$correct = 0;
-		// ids of password fields are change in the middle version of joomla 2.5 and joomla 3.3
-		// so need to check it
-		if($major == 25 || $major >= 33){
-			$correct = 1;
-		}
-		$js = ' var f90_rv_correct_sequence = '.$correct.';';
-
-		$doc = JFactory::getDocument();
-		$doc->addScriptDeclaration($js);
 		return true;
 	}
 	

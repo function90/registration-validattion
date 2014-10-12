@@ -1,11 +1,7 @@
 (function($){
 	$(document).ready(function(){
-		var password1 = 'jform_password2';
-		var password2 = 'jform_password1';
-		if(f90_rv_correct_sequence){
-			password1 = 'jform_password1';
-			password2 = 'jform_password2';
-		}
+		var password1 = $('input[type="password"][id^="jform_password"]:first').attr('id');
+		var password2 = $('input[type="password"][id^="jform_password"]:eq(1)').attr('id');		
 
 		function validate_passowrd_confirm()
 		{
